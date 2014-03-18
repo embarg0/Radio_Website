@@ -8,7 +8,33 @@
 </head>
 <body>
 
-<%= yield %>
+	<div class="header" id="header">
+		<div class ="container" id="header-container">
+			<%= RadioWebsite %>
+		</div>
+	</div>
+
+
+	<div class="navigation">
+		<div class ="container" >
+			<%= link_to "Home", root_path, class: "nav-link" %>
+			<%= link_to "Contact", contact_path, class: "nav-link" %>
+			
+		</div>
+
+	</div>
+
+	<div class="content">
+		<div class="container">
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<div class="container" id="footer-container">
+		</div>
+	</div>
+	
 
 </body>
 </html>
