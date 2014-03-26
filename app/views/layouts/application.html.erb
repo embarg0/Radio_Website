@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RadioWebsite</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>RadioWebsite</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -23,22 +23,28 @@
 			<%= link_to "Radio Shows", shows_path, class: "nav-link" %>
 			<%= link_to "Contact", contact_path, class: "nav-link" %> 
 		</div>
-			</nav>
+	</nav>
 
 	<div class="content">
 
 		<div class="container">
 
-		<div class="content-container">
-		</div>
+			<div class="content-container">
+			</div>
 
-	</div>
-
-	<div class="footer">
-		<div class="container" id="footer-container">
 		</div>
 	</div>
-	
+
+		<footer id="footer">
+			<div class = "footer-container">
+			Contact Us <br>
+			Address:<br>
+			Phone:<br>
+			Email:<br>
+			</div>
+
+		</footer>
+
 
 </body>
 </html>
