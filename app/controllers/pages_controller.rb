@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def shows
+  end
+  
+
   def contact
   end
   
