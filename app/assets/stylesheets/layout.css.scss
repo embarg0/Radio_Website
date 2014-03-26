@@ -2,22 +2,14 @@
 body {
 	width:auto;
 	margin: 0; /*default rails padding around boarder*/
-	background-image: url('/assets/dark-wood-fence-background.png');
-	background-size: auto;
-}
-
-.container {
-
-	width:960px;
-	/*margin:0 auto 0 auto; specify all four arguments at once*/
-	margin: 0 auto; /*specify top and bottom and then right and left - allows to center the container*/
-	
+	height:996px;
+	position: relative;
 }
 
 
 /* Header Styling */
 .header {
-
+	height: 99px;
 	background: #000000;
 	text-align: center;
 	color:white;
@@ -27,16 +19,26 @@ body {
 	font-size: 35px;
 }
 
+
 /* Navigation Styling */
-.navigation {
+
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+    height: 50px;
+}
+
+#nav_bar {
 	text-align: center;
 	background: #3B3835;
 	color:white;
+    height: 50px;
 }
 
 .nav-link {
 	display:inline-block;
-	padding:10px 15px;
 	text-decoration:none;
 	margin-right: 15px;
 	color:white;
@@ -49,14 +51,19 @@ body {
 
 }
 
+
 /* Content Styling */
 .content {
-	width: 960px;
-	height: 100%;
+	width: 100%;
+	height: 797px;
 	margin-left: auto;
 	margin-right: auto;
+<<<<<<< HEAD
 	margin-top: 25px;
 	padding-bottom: auto;
+=======
+	//margin-top: 200px;
+>>>>>>> 52735f202adbb6c02ffbb7669fbd6a4d3960525f
 	position: relative;
 	background: #3B3835;
 	color:white;
@@ -64,7 +71,34 @@ body {
 		margin-top: 0;
 		color:white;
 	}
+<<<<<<< HEAD
 
+=======
+	background-image: url('7.jpg');
+	background-size: cover;
+	background-repeat:no-repeat;
+}
+
+.content-withoutHeader{
+	height: 797px;
+}
+
+
+.container {
+	width:100%;
+	height:100%;
+	/*margin: auto 0 auto; specify all four arguments at once*/
+	//margin: 0 auto; /*specify top and bottom and then right and left - allows to center the container*/
+}
+
+.content-container{
+	height:50%;
+	width:70%;
+	//margin:100 auto 100 auto; // specify all four arguments at once*/
+	margin: 20% 20% ; /*specify top and bottom and then right and left - allows to center the container*/
+	background: #3B3835;
+	position:absolute;
+>>>>>>> 52735f202adbb6c02ffbb7669fbd6a4d3960525f
 }
 
 /* Footer Styling */
@@ -73,9 +107,8 @@ body {
 	position: absolute;
 	padding-bottom: 0px;
 	margin:0 auto;
-	margin-top: -40px;
 	width: 100%;
-	height: 40px;
+	height: 149px;
 	background: #000000;
 	color:white;
 }
