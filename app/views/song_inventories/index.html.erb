@@ -1,0 +1,37 @@
+<h1>Listing song_inventories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Songid</th>
+      <th>Title</th>
+      <th>Cancon</th>
+      <th>Instrumental</th>
+      <th>Artistiid</th>
+      <th>Albumid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @song_inventories.each do |song_inventory| %>
+      <tr>
+        <td><%= song_inventory.songID %></td>
+        <td><%= song_inventory.title %></td>
+        <td><%= song_inventory.cancon %></td>
+        <td><%= song_inventory.instrumental %></td>
+        <td><%= song_inventory.artistiID %></td>
+        <td><%= song_inventory.albumID %></td>
+        <td><%= link_to 'Show', song_inventory %></td>
+        <td><%= link_to 'Edit', edit_song_inventory_path(song_inventory) %></td>
+        <td><%= link_to 'Destroy', song_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song inventory', new_song_inventory_path %>

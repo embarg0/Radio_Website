@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327025728) do
+ActiveRecord::Schema.define(version: 20140327030147) do
 
   create_table "hosts", force: true do |t|
     t.string   "employeeNum"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20140327025728) do
     t.string   "name"
     t.string   "host"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "song_inventories", force: true do |t|
+    t.integer  "songID"
+    t.string   "title"
+    t.integer  "cancon"
+    t.integer  "instrumental"
+    t.integer  "artistiID"
+    t.integer  "albumID"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
