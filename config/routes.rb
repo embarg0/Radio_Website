@@ -1,6 +1,8 @@
 RadioWebsite::Application.routes.draw do
 
 
+  resources :guests
+
   resources :song_inventories
 
   resources :play_sheets
