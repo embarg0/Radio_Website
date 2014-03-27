@@ -1,0 +1,29 @@
+<%= form_for(@play_sheet) do |f| %>
+  <% if @play_sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@play_sheet.errors.count, "error") %> prohibited this play_sheet from being saved:</h2>
+
+      <ul>
+      <% @play_sheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :playSheetNum %><br>
+    <%= f.number_field :playSheetNum %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :dateOfWeek %><br>
+    <%= f.text_field :dateOfWeek %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

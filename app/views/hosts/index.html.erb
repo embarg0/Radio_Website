@@ -1,0 +1,41 @@
+<h1>Listing hosts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employeenum</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Stagename</th>
+      <th>Dateofbirth</th>
+      <th>Rating</th>
+      <th>Contractstartdate</th>
+      <th>Salary</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosts.each do |host| %>
+      <tr>
+        <td><%= host.employeeNum %></td>
+        <td><%= host.firstName %></td>
+        <td><%= host.lastName %></td>
+        <td><%= host.stageName %></td>
+        <td><%= host.dateOfBirth %></td>
+        <td><%= host.rating %></td>
+        <td><%= host.contractStartDate %></td>
+        <td><%= host.salary %></td>
+        <td><%= link_to 'Show', host %></td>
+        <td><%= link_to 'Edit', edit_host_path(host) %></td>
+        <td><%= link_to 'Destroy', host, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Host', new_host_path %>

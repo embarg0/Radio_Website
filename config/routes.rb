@@ -1,6 +1,10 @@
 RadioWebsite::Application.routes.draw do
 
 
+  resources :play_sheets
+
+  resources :hosts
+
   resources :shows
 
   root "pages#home"

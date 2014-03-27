@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Playsheetnum:</strong>
+  <%= @play_sheet.playSheetNum %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @play_sheet.date %>
+</p>
+
+<p>
+  <strong>Dateofweek:</strong>
+  <%= @play_sheet.dateOfWeek %>
+</p>
+
+<%= link_to 'Edit', edit_play_sheet_path(@play_sheet) %> |
+<%= link_to 'Back', play_sheets_path %>
