@@ -11,6 +11,8 @@ RadioWebsite::Application.routes.draw do
 
   resources :shows
 
+  devise_for :users
+
   root "pages#home"
   get "pages/index"
   get "/contact" => "pages#contact"
