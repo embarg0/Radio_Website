@@ -26,6 +26,16 @@
 			<%= link_to "Play Sheets", play_sheets_path, class: "nav-link" %> 
 			<%= link_to "Song Inventory", song_inventories_path, class: "nav-link" %> 
 			<%= link_to "Contact", contact_path, class: "nav-link" %> 
+			<% if user_signed_in? %>
+			<% if admin? %>
+			<%= link_to "Sign Out (Logged in as: Admin)", destroy_user_session_path, 
+			method: :delete, class: "nav-link" %>
+			<% else %>
+			<%= link_to "Sign Out (Logged in as: Regular User)", destroy_user_session_path, 
+			method: :delete, class: "nav-link" %>
+			<% end %>
+
+			<% end %>
 		</div>
 	</nav>
 
@@ -39,15 +49,15 @@
 		</div>
 	</div>
 
-		<footer id="footer">
-			<div class = "footer-container">
+	<footer id="footer">
+		<div class = "footer-container">
 			Contact Us <br>
 			Address:<br>
 			Phone:<br>
 			Email:<br>
-			</div>
+		</div>
 
-		</footer>
+	</footer>
 
 
 </body>
