@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -30,15 +30,10 @@ gem 'jbuilder', '~> 1.2'
 # Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 
-# Devise
-gem 'devise' 
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-gem 'sequel'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -51,3 +46,6 @@ gem 'sequel'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem 'devise'

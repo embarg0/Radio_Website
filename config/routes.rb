@@ -1,6 +1,7 @@
 RadioWebsite::Application.routes.draw do
 
 
+  devise_for :users
   resources :guests
 
   resources :song_inventories
@@ -10,8 +11,6 @@ RadioWebsite::Application.routes.draw do
   resources :hosts
 
   resources :shows
-
-  devise_for :users
 
   root "pages#home"
   get "pages/index"
