@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329035424) do
+ActiveRecord::Schema.define(version: 20140329232326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "guests", force: true do |t|
-    t.integer  "guestNum"
     t.string   "firstName"
     t.string   "lastName"
     t.text     "description"
@@ -28,8 +27,12 @@ ActiveRecord::Schema.define(version: 20140329035424) do
     t.datetime "updated_at"
   end
 
+  create_table "guests_hosts", id: false, force: true do |t|
+    t.integer "guest_id", null: false
+    t.integer "host_id",  null: false
+  end
+
   create_table "hosts", force: true do |t|
-    t.string   "employeeNum"
     t.string   "firstName"
     t.string   "lastName"
     t.string   "stageName"
@@ -47,7 +50,6 @@ ActiveRecord::Schema.define(version: 20140329035424) do
   end
 
   create_table "play_sheets", force: true do |t|
-    t.integer  "playSheetNum"
     t.date     "date"
     t.string   "dayOfWeek"
     t.datetime "created_at"
@@ -74,7 +76,6 @@ ActiveRecord::Schema.define(version: 20140329035424) do
   end
 
   create_table "song_inventories", force: true do |t|
-    t.integer  "songID"
     t.string   "title"
     t.integer  "cancon"
     t.integer  "instrumental"

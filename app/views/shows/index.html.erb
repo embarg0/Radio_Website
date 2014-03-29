@@ -18,9 +18,10 @@
     <% @shows.each do |show| %>
       <tr>
         <td><%= show.name %></td>
-        <td><%= Host.find_by(employeeNum: show.host).firstName %></td>
+        <td><%= Host.find_by(id: show.host).firstName %></td>
         <td><%= show.host %></td>
         <td><%= show.description %></td>
+
         <td><%= link_to 'Show', show, class: "content-link" %></td>
         <td><%= link_to 'Edit', edit_show_path(show), class: "content-link"  %></td>
         <td><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
