@@ -18,7 +18,7 @@
         <td><%= play_sheet.dayOfWeek %></td>
         <td><%= link_to 'Show', play_sheet, class: "content-link" %></td>
         <td><%= link_to 'Edit', edit_play_sheet_path(play_sheet), class: "content-link" %></td>
-        <td><%= link_to 'Destroy', play_sheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', play_sheet, method: :delete, data: { confirm: 'Are you sure?' } , class: "content-link"%></td>
       </tr>
     <% end %>
   </tbody>
