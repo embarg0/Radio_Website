@@ -18,7 +18,8 @@
 
 
 	<nav id='nav_bar'>
-		<div class ='nav_link'>
+		<div class="navigation">
+		<div class ="container" >
 			<%= link_to "Home", root_path, class: "nav-link" %> 
 			<%= link_to "Radio Shows", shows_path, class: "nav-link" %>
 			<%= link_to "Hosts", hosts_path, class: "nav-link" %> 
@@ -40,14 +41,17 @@
 							<% end %>
 
 			<% end %>
-		</div>
+		
+	</div>
 	</nav>
+</div>
 
 	<div class="content">
 
 		<div class="container">
 
 			<div class="content-container">
+				<%= yield %>
 			</div>
 
 		</div>
