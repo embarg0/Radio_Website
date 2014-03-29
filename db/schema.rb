@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328235217) do
+ActiveRecord::Schema.define(version: 20140329012057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140328235217) do
   create_table "play_sheets", force: true do |t|
     t.integer  "playSheetNum"
     t.date     "date"
-    t.string   "dateOfWeek"
+    t.string   "dayOfWeek"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20140328235217) do
     t.string   "title"
     t.integer  "cancon"
     t.integer  "instrumental"
-    t.integer  "artistiID"
+    t.integer  "artistID"
     t.integer  "albumID"
     t.datetime "created_at"
     t.datetime "updated_at"
