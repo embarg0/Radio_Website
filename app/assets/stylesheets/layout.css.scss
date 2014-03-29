@@ -74,6 +74,15 @@ body {
 
 }
 
+.content-link {
+	color:white;
+
+	&:hover {
+		background:#ccc;
+		color:black;
+	}
+}
+
 .content-withoutHeader{
 	height: 797px;
 }

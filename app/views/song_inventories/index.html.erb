@@ -24,9 +24,9 @@
         <td><%= song_inventory.instrumental %></td>
         <td><%= song_inventory.artistID %></td>
         <td><%= song_inventory.albumID %></td>
-        <td><%= link_to 'Show', song_inventory %></td>
-        <td><%= link_to 'Edit', edit_song_inventory_path(song_inventory) %></td>
-        <td><%= link_to 'Destroy', song_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', song_inventory, class: "content-link" %></td>
+        <td><%= link_to 'Edit', edit_song_inventory_path(song_inventory), class: "content-link" %></td>
+        <td><%= link_to 'Destroy', song_inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: "content-link"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Song inventory', new_song_inventory_path %>
+<%= link_to 'New Song inventory', new_song_inventory_path, class: "content-link" %>

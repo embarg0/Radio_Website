@@ -28,8 +28,8 @@
         <td><%= host.rating %></td>
         <td><%= host.contractStartDate %></td>
         <td><%= host.salary %></td>
-        <td><%= link_to 'Show', host %></td>
-        <td><%= link_to 'Edit', edit_host_path(host) %></td>
+        <td><%= link_to 'Show', host, class: "content-link" %></td>
+        <td><%= link_to 'Edit', edit_host_path(host), class: "content-link" %></td>
         <td><%= link_to 'Destroy', host, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Host', new_host_path %>
+<%= link_to 'New Host', new_host_path, class: "content-link" %>

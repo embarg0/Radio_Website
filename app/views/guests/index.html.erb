@@ -26,8 +26,8 @@
         <td><%= guest.topic %></td>
         <td><%= guest.rating %></td>
         <td><%= guest.timeslotNum %></td>
-        <td><%= link_to 'Show', guest %></td>
-        <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
+        <td><%= link_to 'Show', guest, class: "content-link" %></td>
+        <td><%= link_to 'Edit', edit_guest_path(guest), class: "content-link" %></td>
         <td><%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Guest', new_guest_path %>
+<%= link_to 'New Guest', new_guest_path, class: "content-link" %>
