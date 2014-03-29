@@ -28,11 +28,6 @@ ActiveRecord::Schema.define(version: 20140329035424) do
     t.datetime "updated_at"
   end
 
-  create_table "guests_hosts", id: false, force: true do |t|
-    t.integer "guest_id", null: false
-    t.integer "host_id",  null: false
-  end
-
   create_table "hosts", force: true do |t|
     t.string   "employeeNum"
     t.string   "firstName"
