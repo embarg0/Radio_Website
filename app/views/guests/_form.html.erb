@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :guestNum %><br>
-    <%= f.number_field :guestNum %>
-  </div>
-  <div class="field">
     <%= f.label :firstName %><br>
     <%= f.text_field :firstName %>
   </div>
@@ -33,12 +29,9 @@
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+    <%= f.number_field :rating, as: :integer, min: 0, max:10 %>
   </div>
-  <div class="field">
-    <%= f.label :timeSlotNum %><br>
-    <%= f.number_field :timeSlotNum %>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
