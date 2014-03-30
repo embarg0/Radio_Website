@@ -1,52 +1,57 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
+ruby '1.9.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+require 'rbconfig'
+
+gem 'listen'
+gem 'wdm', '>=0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
+
 gem 'rails', '4.0.2'
-
-# Use postgres as the database for Active Record
-gem 'pg'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-# Bootstrap
+gem 'pg', '0.15.1'
 gem 'bootstrap-sass', '2.3.2.0'
+gem 'sass', '3.2.13'
+gem 'protected_attributes', '1.0.5'
+gem 'thin'
+gem 'devise'
+gem 'sprockets', '2.11.0'
+gem 'slim', '2.0.0'
+gem 'redcarpet', "~> 3.1.1"
+gem 'pg_search'
+gem 'simple_form'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'sunspot_stats'
+gem 'progress_bar'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+
+group :development do
+	gem 'pry'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+group :development, :test do
+  gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec', '2.5.0'
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.6'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'sass-rails', '4.0.1'
+gem 'uglifier', '2.1.1'
+gem 'coffee-rails', '4.0.1'
+gem 'jquery-rails', '3.0.4'
+gem 'turbolinks', '1.1.1'
+gem 'jbuilder', '1.0.2'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :doc do
+  gem 'sdoc', '0.3.20', require: false
+end
 
-gem 'sequel'
-
-gem 'devise'
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end 

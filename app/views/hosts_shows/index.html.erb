@@ -1,0 +1,42 @@
+<div id="container">
+
+    <%= render 'layouts/header' %>
+
+
+<h1>Hosts Show</h1>
+
+<div class="btn btn-success">
+<%= link_to 'New Hosts show', new_hosts_show_path %>
+</div>
+
+<table class="table table-bordered" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+    <tr>
+      <th>Contract Number</th>
+      <th>Host ID</th>
+      <th>Show ID</th>
+      <th>Host Start Date</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosts_shows.each do |hosts_show| %>
+      <tr>
+        <td><%= hosts_show.contract_number %></td>
+        <td><%= hosts_show.host_id %></td>
+        <td><%= hosts_show.show_id %></td>
+        <td><%= hosts_show.host_start_date.try(:strftime, "%B %d, %Y") %></td>
+        <td><%= link_to 'Edit', edit_hosts_show_path(hosts_show) %></td>
+        <td><%= link_to 'Destroy', hosts_show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+      <%= render 'layouts/footer'%>
+
+</div>
