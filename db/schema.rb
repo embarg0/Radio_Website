@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140329232633) do
+=======
+ActiveRecord::Schema.define(version: 20140329232326) do
+>>>>>>> 2b28c03175d830aa1c3103873b39917a7a34f295
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "albums", primary_key: "albumID", force: true do |t|
     t.string   "type"
     t.string   "label"
@@ -43,6 +48,9 @@ ActiveRecord::Schema.define(version: 20140329232633) do
   end
 
   create_table "guests", primary_key: "guestNum", force: true do |t|
+=======
+  create_table "guests", force: true do |t|
+>>>>>>> 2b28c03175d830aa1c3103873b39917a7a34f295
     t.string   "firstName"
     t.string   "lastName"
     t.text     "description"
@@ -53,7 +61,16 @@ ActiveRecord::Schema.define(version: 20140329232633) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "hosts", primary_key: "employeeNum", force: true do |t|
+=======
+  create_table "guests_hosts", id: false, force: true do |t|
+    t.integer "guest_id", null: false
+    t.integer "host_id",  null: false
+  end
+
+  create_table "hosts", force: true do |t|
+>>>>>>> 2b28c03175d830aa1c3103873b39917a7a34f295
     t.string   "firstName"
     t.string   "lastName"
     t.string   "stageName"
@@ -74,7 +91,11 @@ ActiveRecord::Schema.define(version: 20140329232633) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "play_sheets", primary_key: "playSheetsNum", force: true do |t|
+=======
+  create_table "play_sheets", force: true do |t|
+>>>>>>> 2b28c03175d830aa1c3103873b39917a7a34f295
     t.date     "date"
     t.date     "dayofweek"
     t.datetime "created_at"
@@ -100,7 +121,11 @@ ActiveRecord::Schema.define(version: 20140329232633) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "song_inventories", primary_key: "songID", force: true do |t|
+=======
+  create_table "song_inventories", force: true do |t|
+>>>>>>> 2b28c03175d830aa1c3103873b39917a7a34f295
     t.string   "title"
     t.integer  "cancon"
     t.string   "instrumental"
