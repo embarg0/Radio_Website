@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :employeeNum %><br>
-    <%= f.text_field :employeeNum %>
-  </div>
+
   <div class="field">
     <%= f.label :firstName %><br>
     <%= f.text_field :firstName %>
@@ -33,7 +30,7 @@
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <input type="number" name="quantity" min="0" max="10">
+    <%= f.number_field :rating, as: :integer, min: 0, max:10%>
   </div>
   <div class="field">
     <%= f.label :contractStartDate %><br>
@@ -41,7 +38,7 @@
   </div>
   <div class="field">
     <%= f.label :salary %><br>
-    <%= f.number_field :salary %>
+    <%= f.number_field :salary, as: :integer, min: 0%>
   </div>
   <div class="actions">
     <%= f.submit %>
