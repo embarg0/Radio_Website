@@ -98,6 +98,12 @@ class StaticPagesController < ApplicationController
           @search = Host.search do
             fulltext temp
           end
+        elsif params[:search].try(:downcase).match(/.*(topguest:?).*/)
+          temp = params[:search].split(' ')[1..-1].join(' ')
+          @search = Host.search do
+            fulltext temp
+            puts stat(:rating, type='max')
+          end
         else
             @search = Host.search do
             fulltext params[:search]
@@ -148,7 +154,7 @@ class StaticPagesController < ApplicationController
         @playsheets = Playsheet.all
         @shows = Show.all
         @timeslots = Timeslot.all
-       @tracks = Track.all
+        @tracks = Track.all
     end
 
   end

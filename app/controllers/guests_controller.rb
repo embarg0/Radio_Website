@@ -7,6 +7,16 @@ class GuestsController < ApplicationController
     @guests = Guest.all
   end
 
+  def topGuest
+    max = @guests[0]
+    for guest in @guests
+      if max.rating < guest
+        max = guest
+      end
+    end
+    return guest
+  end
+
   # GET /guests/1
   # GET /guests/1.json
   def show
