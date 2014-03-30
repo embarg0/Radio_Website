@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startTime: 2014-03-30 10:27:35
+  endTime: 2014-03-30 10:27:35
+  showNum: 1
+  playsheetNum: 1
+
+two:
+  startTime: 2014-03-30 10:27:35
+  endTime: 2014-03-30 10:27:35
+  showNum: 1
+  playsheetNum: 1

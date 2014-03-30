@@ -1,0 +1,41 @@
+<%= form_for(@song_inventory) do |f| %>
+  <% if @song_inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@song_inventory.errors.count, "error") %> prohibited this song_inventory from being saved:</h2>
+
+      <ul>
+      <% @song_inventory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :songID %><br>
+    <%= f.number_field :songID %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :cancon %><br>
+    <%= f.number_field :cancon %>
+  </div>
+  <div class="field">
+    <%= f.label :instrumental %><br>
+    <%= f.number_field :instrumental %>
+  </div>
+  <div class="field">
+    <%= f.label :artistID %><br>
+    <%= f.number_field :artistID %>
+  </div>
+  <div class="field">
+    <%= f.label :albumID %><br>
+    <%= f.number_field :albumID %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

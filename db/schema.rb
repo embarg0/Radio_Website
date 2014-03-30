@@ -11,114 +11,89 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327060019) do
+ActiveRecord::Schema.define(version: 20140329232453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "albums", id: false, force: true do |t|
-    t.string "album_id",             null: false
-    t.string "genre"
-    t.string "label"
-    t.date   "album_recording_date"
-  end
-
-  create_table "artists", id: false, force: true do |t|
-    t.string "artist_id",     null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "stage_name"
-    t.string "nationality"
-    t.date   "date_of_birth"
-  end
-
-  create_table "bands", id: false, force: true do |t|
-    t.string  "band_name"
-    t.integer "start_year"
-    t.string  "nationality"
-    t.string  "band_id",     null: false
-  end
-
-  create_table "guests", id: false, force: true do |t|
-    t.string   "last_name"
+  create_table "guests", force: true do |t|
+    t.string   "firstName"
+    t.string   "lastName"
     t.text     "description"
-    t.string   "topic"
+    t.text     "topic"
     t.integer  "rating"
-    t.integer  "timeslots_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "guest_id",     null: false
-    t.string   "first_name"
-  end
-
-  create_table "hosts", id: false, force: true do |t|
-    t.integer "host_id",             null: false
-    t.string  "last_name"
-    t.string  "stage_name"
-    t.date    "date_of_birth"
-    t.integer "rating"
-    t.date    "contract_start_date"
-    t.float   "salary"
-    t.string  "first_name"
-    t.date    "date_last_hosted"
-  end
-
-  create_table "hosts_shows", primary_key: "contract_number", force: true do |t|
-    t.integer  "host_id"
-    t.integer  "show_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.date     "host_start_date"
-  end
-
-  create_table "pg_search_documents", force: true do |t|
-    t.text     "content"
-    t.string   "searchable_id"
-    t.string   "searchable_type"
+    t.integer  "timeSlotNum"
+    t.integer  "time_slot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "playsheets", id: false, force: true do |t|
-    t.string  "day_of_week"
-    t.integer "playsheet_id",   null: false
-    t.date    "playsheet_date"
+  create_table "hosts", force: true do |t|
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "stageName"
+    t.date     "dateOfBirth"
+    t.integer  "rating"
+    t.date     "contractStartDate"
+    t.string   "salary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "shows", id: false, force: true do |t|
-    t.integer "show_id",     null: false
-    t.string  "show_name"
-    t.text    "description"
-    t.string  "category"
+  create_table "hosts_shows", force: true do |t|
+    t.string   "employeeNum"
+    t.integer  "showNum"
+    t.date     "hostStartYear"
+    t.date     "hostStartMonth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "songs", primary_key: "song_id", force: true do |t|
+  create_table "play_sheets", force: true do |t|
+    t.date     "date"
+    t.date     "dayofweek"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shows", force: true do |t|
+    t.string   "showName"
+    t.string   "category"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "song_inventories", force: true do |t|
     t.string   "title"
-    t.boolean  "cancon"
-    t.boolean  "instrumental"
-    t.string   "album_id"
-    t.string   "artist_id"
+    t.integer  "cancon"
+    t.string   "instrumental"
+    t.integer  "artistID"
+    t.integer  "albumID"
+    t.integer  "album_id"
+    t.integer  "artist_id"
+    t.integer  "band_id"
+    t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "band_id",      default: "-"
   end
 
-  create_table "timeslots", id: false, force: true do |t|
-    t.integer "timeslots_id", null: false
-    t.time    "start_time"
-    t.time    "end_time"
-    t.integer "show_id"
-    t.integer "playsheet_id"
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "tracks", id: false, force: true do |t|
-    t.string  "track_id",     null: false
-    t.string  "title"
-    t.time    "start_time"
-    t.time    "end_time"
-    t.string  "genre"
-    t.integer "song_id"
-    t.integer "playsheet_id"
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

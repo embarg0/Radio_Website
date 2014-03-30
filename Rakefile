@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RadioStation::Application.load_tasks
+RadioWebsite::Application.load_tasks

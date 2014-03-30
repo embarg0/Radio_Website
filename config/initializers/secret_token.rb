@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RadioStation::Application.config.secret_key_base = '76711fe5aade8956e6637e657442d3b9cbd1727f57ebd394199f972a9c424cf5226caca8c0c98d2c72d66570995adc956b29e374ab0a63a071de93e58226efc8'
+RadioWebsite::Application.config.secret_key_base = 'deb963fd092fbf830e2a06d5f90ab769920764ab584ba00e6155152e201570801f9dd4c497416a4d905cfa36bff181641bf57f5bcde45baf9b0953a618913f4d'
