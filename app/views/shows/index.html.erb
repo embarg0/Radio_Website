@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Host</th>
+      <th>Category</th>
       <th>Description</th>
       <th></th>
       <th></th>
@@ -17,9 +17,9 @@
   <tbody>
     <% @shows.each do |show| %>
       <tr>
-        <td><%= show.name %></td>
+        <td><%= show.showName %></td>
         
-        <td><%= show.host %></td>
+        <td><%= show.category %></td>
         <td><%= show.description %></td>
         <td><%= link_to 'Show', show, class: "content-link" %></td>
         <td><%= link_to 'Edit', edit_show_path(show), class: "content-link"  %></td>

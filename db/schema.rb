@@ -11,45 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329035424) do
+ActiveRecord::Schema.define(version: 20140329232633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "guests", force: true do |t|
-    t.integer  "guestNum"
+  create_table "albums", primary_key: "albumID", force: true do |t|
+    t.string   "type"
+    t.string   "label"
+    t.date     "albumRecordingDate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artists", primary_key: "artistID", force: true do |t|
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "stageName"
+    t.string   "nationality"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bands", primary_key: "artistID", force: true do |t|
+    t.string   "name"
+    t.date     "stateYear"
+    t.string   "nationality"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guests", primary_key: "guestNum", force: true do |t|
     t.string   "firstName"
     t.string   "lastName"
     t.text     "description"
     t.text     "topic"
     t.integer  "rating"
-    t.integer  "timeslotNum"
+    t.integer  "timeSlotNum"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "hosts", force: true do |t|
-    t.string   "employeeNum"
+  create_table "hosts", primary_key: "employeeNum", force: true do |t|
     t.string   "firstName"
     t.string   "lastName"
     t.string   "stageName"
     t.date     "dateOfBirth"
     t.integer  "rating"
     t.date     "contractStartDate"
-    t.integer  "salary"
+    t.string   "salary"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "hosts_shows", id: false, force: true do |t|
-    t.integer "show_id", null: false
-    t.integer "host_id", null: false
+  create_table "hosts_shows", primary_key: "contractNum", force: true do |t|
+    t.string   "employeeNum"
+    t.integer  "showNum"
+    t.date     "hostStartYear"
+    t.date     "hostStartMonth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "play_sheets", force: true do |t|
-    t.integer  "playSheetNum"
+  create_table "play_sheets", primary_key: "playSheetsNum", force: true do |t|
     t.date     "date"
-    t.string   "dayOfWeek"
+    t.date     "dayofweek"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,21 +92,39 @@ ActiveRecord::Schema.define(version: 20140329035424) do
     t.integer "role_id", null: false
   end
 
-  create_table "shows", force: true do |t|
-    t.string   "name"
-    t.string   "host"
+  create_table "shows", primary_key: "showNum", force: true do |t|
+    t.string   "showName"
+    t.string   "category"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "song_inventories", force: true do |t|
-    t.integer  "songID"
+  create_table "song_inventories", primary_key: "songID", force: true do |t|
     t.string   "title"
     t.integer  "cancon"
-    t.integer  "instrumental"
+    t.string   "instrumental"
     t.integer  "artistID"
     t.integer  "albumID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "time_slots", primary_key: "timeslotsNum", force: true do |t|
+    t.time     "startTime"
+    t.time     "endTime"
+    t.integer  "showNum"
+    t.integer  "playsheetNum"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tracks", primary_key: "trackID", force: true do |t|
+    t.string   "title"
+    t.time     "startTime"
+    t.time     "endTime"
+    t.string   "type"
+    t.integer  "songID"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
