@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :dayofweek %><br>
-    <%= f.text_field :dayofweek  %>
+    <%= f.select :dayofweek, [['Monday','monday'],['Tuesday','tuesday'],['Wednesday', 'wednesday'],['Thursday', 'thursday'], ['Friday', 'friday'], ['Saturday', 'saturday'], ['Sunday', 'sunday'] ]  %>
   </div>
   <div class="actions">
     <%= f.submit %>

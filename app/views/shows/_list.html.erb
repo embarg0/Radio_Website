@@ -1,0 +1,10 @@
+<%= form_tag @show do |f| %>
+  <div class="field">
+    <%= f.label :showList, "Show List" %><br>
+    <%= f.collection_select :showNum, Show.order(:showName), :showNum, :showName %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+
+  <% end %>
