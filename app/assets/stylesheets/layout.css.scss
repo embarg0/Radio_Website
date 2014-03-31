@@ -96,7 +96,11 @@ body {
 }
 
 .content-container{
+<<<<<<< HEAD
 	height:5000px;
+=======
+	height:auto;
+>>>>>>> 8e59e202836566f1aafdf4a10ebfd85ea3504efd
 	width:65%;
 	/*//margin:100 auto 100 auto; // specify all four arguments at once*/
 	margin: 20% 20% ; /*specify top and bottom and then right and left - allows to center the container*/
@@ -115,6 +119,7 @@ body {
     width: 100%;
     color:white;
     height: 150px;
+	position:relative;
 
 }
 .footer-container {

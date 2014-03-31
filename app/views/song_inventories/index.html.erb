@@ -38,3 +38,117 @@
 <br>
 
 <%= link_to 'New Song inventory', new_song_inventory_path, class: "content-link" %>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<br><br><br>
+
+<h1> Recording Label Song Totals (4f): </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recording Label</th>
+      <th># Songs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @song_inventories[0].query4f().each do |res| %>
+      <tr>
+        <td><%= res['label'] %></td>
+        <td><%= res['numSongs'] %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<br><br><br>
+
+<h1> Songs not played in Jan 2014 (4g): </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song Title</th>
+      <th>Date recorded</th>
+      <th>Artist</th>
+      <th>Band</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @song_inventories[0].query4g().each do |res| %>
+      <tr>
+        <td><%= res['title'] %></td>
+        <td><%= res['albumRecordingDate'] %></td>
+        <td><%= res['artist_id'] %></td>
+        <td><%= res['band_id'] %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<br><br><br>
+
+<h1> Albums played more often than Band X (4h): </h1><!add dropdown>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date recorded</th>
+      <th>Artist</th>
+      <th>Band</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @song_inventories[0].query4h(1).each do |res| %>
+      <tr>
+        <td><%= res['title'] %></td>
+        <td><%= res['albumRecordingDate'] %></td>
+        <td><%= res['firstName'] %> <%= res['lastName'] %></td>
+        <td><%= res['name'] %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+<br><br><br>
+
+<h1> Most played canadian artists (4i): </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artist Name</th>
+      <th>Host Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @song_inventories[0].query4i().each do |res| %>
+      <tr>
+        <td><%= res['firstName'] %> <%= res['lastName']%></td><!host and artist both first and last names>
+        <td><%= res['firstName'] %> <%= res['lastName']%></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+<br><br><br>
+
+<h1> Instrumental songs more popular than others? (4j): </h1>
+<%= @song_inventories[0].query4j()[0]%>

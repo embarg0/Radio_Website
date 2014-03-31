@@ -38,4 +38,50 @@
 
 <br>
 
-<%= link_to 'New Host', new_host_path, class: "content-link" %>
+<%= link_to 'New Host', new_host_path, class: "content-link" %><br>
+<h1> Higher salary than Johns (4m): </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>Lastname</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @hosts[0].query4m().each do |host| %>
+      <tr>
+        <td><%= host['firstName'] %></td>
+        <td><%= host['lastName'] %></td>
+        <td><%= host['salary'] %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br><br>
+
+<h1> Most diverse hosts (4n): </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>Lastname</th>
+      <th>Shows</th>
+      <th>TimeSlots</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @hosts[0].query4n().each do |host| %>
+      <tr>
+        <td><%= host['firstName'] %></td>
+        <td><%= host['lastName'] %></td>
+        <td><%= host['showName'] %></td>
+        <td><%= host['timeSlot'] %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
