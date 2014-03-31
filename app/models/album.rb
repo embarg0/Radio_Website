@@ -1,4 +1,5 @@
 class Album < ActiveRecord::Base
+<<<<<<< HEAD
 
 has_many :songs, inverse_of: :album
 
@@ -16,3 +17,7 @@ self.primary_key= :album_id
  end
 
 end
+=======
+	has_many :song_inventories
+end
+>>>>>>> FETCH_HEAD

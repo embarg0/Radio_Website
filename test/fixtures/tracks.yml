@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  startTime: 2014-03-30 10:21:16
+  endTime: 2014-03-30 10:21:16
+  type: 
+  songID: 1
+
+two:
+  title: MyString
+  startTime: 2014-03-30 10:21:16
+  endTime: 2014-03-30 10:21:16
+  type: 
+  songID: 1

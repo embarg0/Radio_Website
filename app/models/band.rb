@@ -1,4 +1,5 @@
 class Band < ActiveRecord::Base
+<<<<<<< HEAD
 
 self.primary_key= :band_id
 
@@ -11,4 +12,7 @@ has_many :songs, inverse_of: :band
  	integer :start_year
  end
 
+=======
+	has_many :song_inventories
+>>>>>>> FETCH_HEAD
 end

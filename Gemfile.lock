@@ -65,6 +65,7 @@ GEM
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (2.0.2)
+<<<<<<< HEAD
     ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
     formatador (0.2.4)
@@ -85,6 +86,16 @@ GEM
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.0.2)
+=======
+    foreigner (1.6.1)
+      activerecord (>= 3.0.0)
+    hike (1.2.3)
+    i18n (0.6.9)
+    immigrant (0.1.6)
+      activerecord (>= 3.0)
+      foreigner (>= 1.2.1)
+    jbuilder (1.5.3)
+>>>>>>> FETCH_HEAD
       activesupport (>= 3.0.0)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -261,6 +272,7 @@ DEPENDENCIES
   childprocess (= 0.3.6)
   coffee-rails (= 4.0.1)
   devise
+<<<<<<< HEAD
   guard-rspec (= 2.5.0)
   guard-spork (= 1.5.0)
   jbuilder (= 1.0.2)
@@ -271,6 +283,13 @@ DEPENDENCIES
   progress_bar
   protected_attributes (= 1.0.5)
   pry
+=======
+  foreigner
+  immigrant
+  jbuilder (~> 1.2)
+  jquery-rails
+  pg
+>>>>>>> FETCH_HEAD
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
   redcarpet (~> 3.1.1)

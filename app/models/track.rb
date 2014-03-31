@@ -1,4 +1,5 @@
 class Track < ActiveRecord::Base
+<<<<<<< HEAD
 
 has_one :song, inverse_of: :track
 has_one :playsheet, inverse_of: :track
@@ -15,4 +16,7 @@ self.primary_key= :track_id
 		time :end_time
 	end
 	
+=======
+	has_one :song
+>>>>>>> FETCH_HEAD
 end

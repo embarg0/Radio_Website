@@ -1,4 +1,5 @@
 class Artist < ActiveRecord::Base
+<<<<<<< HEAD
 
 has_many :songs, inverse_of: :artist
 
@@ -13,4 +14,7 @@ self.primary_key= :artist_id
  	date :date_of_birth
  end
 
+=======
+	has_many :song_inventories
+>>>>>>> FETCH_HEAD
 end

@@ -4,6 +4,22 @@ RadioStation::Application.routes.draw do
   
   resources :hosts_shows
 
+<<<<<<< HEAD
+=======
+  resources :host_shows
+
+  resources :time_slots
+
+  resources :bands
+
+  resources :artists
+
+  resources :albums
+
+  resources :tracks
+
+  devise_for :users
+>>>>>>> FETCH_HEAD
   resources :guests
 
   resources :songs

@@ -52,6 +52,14 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
+<<<<<<< HEAD
 group :production do
   gem 'rails_12factor', '0.0.2'
 end 
+=======
+gem 'devise'
+
+gem 'foreigner'
+
+gem 'immigrant'
+>>>>>>> FETCH_HEAD

@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140327060019) do
+=======
+ActiveRecord::Schema.define(version: 20140331002249) do
+>>>>>>> FETCH_HEAD
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "albums", id: false, force: true do |t|
     t.string "album_id",             null: false
     t.string "genre"
@@ -41,16 +46,52 @@ ActiveRecord::Schema.define(version: 20140327060019) do
 
   create_table "guests", id: false, force: true do |t|
     t.string   "last_name"
+=======
+  create_table "albums", force: true do |t|
+    t.string   "type"
+    t.string   "label"
+    t.date     "albumRecordingDate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artists", force: true do |t|
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "stageName"
+    t.string   "nationality"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bands", force: true do |t|
+    t.string   "name"
+    t.integer  "startYear"
+    t.string   "nationality"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guests", force: true do |t|
+    t.string   "firstName"
+    t.string   "lastName"
+>>>>>>> FETCH_HEAD
     t.text     "description"
     t.string   "topic"
     t.integer  "rating"
+<<<<<<< HEAD
     t.integer  "timeslots_id"
+=======
+    t.integer  "time_slot_id"
+>>>>>>> FETCH_HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "guest_id",     null: false
     t.string   "first_name"
   end
 
+<<<<<<< HEAD
   create_table "hosts", id: false, force: true do |t|
     t.integer "host_id",             null: false
     t.string  "last_name"
@@ -66,6 +107,37 @@ ActiveRecord::Schema.define(version: 20140327060019) do
   create_table "hosts_shows", primary_key: "contract_number", force: true do |t|
     t.integer  "host_id"
     t.integer  "show_id"
+=======
+  create_table "host_shows", force: true do |t|
+    t.date     "hostStartYear"
+    t.date     "hostStartMonth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hosts", force: true do |t|
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "stageName"
+    t.date     "dateOfBirth"
+    t.integer  "rating"
+    t.date     "contractStartDate"
+    t.string   "salary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hosts_shows", force: true do |t|
+    t.date     "hostStartYear"
+    t.date     "hostStartMonth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "play_sheets", force: true do |t|
+    t.date     "date"
+    t.date     "dayofweek"
+>>>>>>> FETCH_HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "host_start_date"
@@ -85,6 +157,7 @@ ActiveRecord::Schema.define(version: 20140327060019) do
     t.date    "playsheet_date"
   end
 
+<<<<<<< HEAD
   create_table "shows", id: false, force: true do |t|
     t.integer "show_id",     null: false
     t.string  "show_name"
@@ -98,11 +171,30 @@ ActiveRecord::Schema.define(version: 20140327060019) do
     t.boolean  "instrumental"
     t.string   "album_id"
     t.string   "artist_id"
+=======
+  create_table "shows", force: true do |t|
+    t.string   "showName"
+    t.string   "category"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "song_inventories", force: true do |t|
+    t.string   "title"
+    t.integer  "cancon"
+    t.string   "instrumental"
+    t.integer  "album_id"
+    t.integer  "artist_id"
+    t.integer  "band_id"
+    t.integer  "track_id"
+>>>>>>> FETCH_HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "band_id",      default: "-"
   end
 
+<<<<<<< HEAD
   create_table "timeslots", id: false, force: true do |t|
     t.integer "timeslots_id", null: false
     t.time    "start_time"
@@ -119,6 +211,40 @@ ActiveRecord::Schema.define(version: 20140327060019) do
     t.string  "genre"
     t.integer "song_id"
     t.integer "playsheet_id"
+=======
+  create_table "time_slots", force: true do |t|
+    t.time     "startTime"
+    t.time     "endTime"
+    t.integer  "show_id"
+    t.integer  "play_sheet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tracks", force: true do |t|
+    t.string   "title"
+    t.time     "startTime"
+    t.time     "endTime"
+    t.string   "type"
+    t.integer  "play_sheet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+>>>>>>> FETCH_HEAD
   end
 
 end

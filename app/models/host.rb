@@ -1,5 +1,6 @@
 class Host < ActiveRecord::Base
 
+<<<<<<< HEAD
 has_many :shows, through: :hosts_shows
 has_many :hosts_shows
 self.primary_key = :host_id
@@ -17,4 +18,9 @@ self.primary_key = :host_id
  	date :date_last_hosted
  	float :salary
 	end
+=======
+	validates :firstName, :lastName, :stageName, :dateOfBirth, :rating, 
+				:contractStartDate, :salary, :presence => true;
+	belongs_to :host_shows
+>>>>>>> FETCH_HEAD
 end
