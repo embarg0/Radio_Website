@@ -1,4 +1,4 @@
 json.array!(@bands) do |band|
-  json.extract! band, :id, :name, :stateYear, :nationality
+  json.extract! band, :id, :name, :startYear, :nationality
   json.url band_url(band, format: :json)
 end

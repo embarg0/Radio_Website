@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140331002249) do
 
   create_table "bands", force: true do |t|
     t.string   "name"
-    t.date     "stateYear"
+    t.integer  "startYear"
     t.string   "nationality"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20140331002249) do
     t.text     "description"
     t.text     "topic"
     t.integer  "rating"
-    t.integer  "timeSlotNum"
     t.integer  "time_slot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -74,8 +73,6 @@ ActiveRecord::Schema.define(version: 20140331002249) do
   end
 
   create_table "hosts_shows", force: true do |t|
-    t.string   "employeeNum"
-    t.integer  "showNum"
     t.date     "hostStartYear"
     t.date     "hostStartMonth"
     t.datetime "created_at"
@@ -112,8 +109,6 @@ ActiveRecord::Schema.define(version: 20140331002249) do
     t.string   "title"
     t.integer  "cancon"
     t.string   "instrumental"
-    t.integer  "artistID"
-    t.integer  "albumID"
     t.integer  "album_id"
     t.integer  "artist_id"
     t.integer  "band_id"
@@ -125,8 +120,6 @@ ActiveRecord::Schema.define(version: 20140331002249) do
   create_table "time_slots", force: true do |t|
     t.time     "startTime"
     t.time     "endTime"
-    t.integer  "showNum"
-    t.integer  "playsheetNum"
     t.integer  "show_id"
     t.integer  "play_sheet_id"
     t.datetime "created_at"
@@ -138,7 +131,6 @@ ActiveRecord::Schema.define(version: 20140331002249) do
     t.time     "startTime"
     t.time     "endTime"
     t.string   "type"
-    t.integer  "songID"
     t.integer  "play_sheet_id"
     t.datetime "created_at"
     t.datetime "updated_at"

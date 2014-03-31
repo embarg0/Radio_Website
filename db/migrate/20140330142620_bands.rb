@@ -2,7 +2,7 @@ class Bands < ActiveRecord::Migration
   def change
     create_table :bands do |t|
       t.string :name
-      t.date :stateYear
+      t.integer :startYear
       t.string :nationality
 
       t.timestamps

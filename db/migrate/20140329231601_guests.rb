@@ -6,7 +6,6 @@ class Guests < ActiveRecord::Migration
       t.text :description
       t.text :topic
       t.integer :rating
-      t.integer :timeSlotNum
       t.belongs_to :time_slot
 
       t.timestamps

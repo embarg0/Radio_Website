@@ -5,7 +5,6 @@ class Tracks < ActiveRecord::Migration
       t.time :startTime
       t.time :endTime
       t.string :type
-      t.integer :songID
       t.belongs_to :play_sheet
 
       t.timestamps

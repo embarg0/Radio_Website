@@ -15,7 +15,7 @@
   <tbody>
     <% @play_sheets.each do |play_sheet| %>
       <tr>
-        <td><%= play_sheet.playSheetsNum %></td>
+        <td><%= play_sheet.id %></td>
         <td><%= play_sheet.date %></td>
         <td><%= play_sheet.dayofweek  %></td>
         <td><%= link_to 'Show', play_sheet, class: "content-link" %></td>

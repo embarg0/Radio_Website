@@ -4,8 +4,6 @@ class SongInventories < ActiveRecord::Migration
       t.string :title
       t.integer :cancon
       t.string :instrumental
-      t.integer :artistID
-      t.integer :albumID
       t.belongs_to :album
       t.belongs_to :artist
       t.belongs_to :band

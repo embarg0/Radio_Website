@@ -1,4 +1,4 @@
-<h1>Listing song_inventories</h1>
+<h1>Listing song_inventories </h1>
 
 <table>
   <thead>
@@ -7,8 +7,10 @@
       <th>Title</th>
       <th>Cancon</th>
       <th>Instrumental</th>
+      <th>BandId</th>
       <th>ArtistId</th>
       <th>AlbumId</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,12 +20,13 @@
   <tbody>
     <% @song_inventories.each do |song_inventory| %>
       <tr>
-        <td><%= song_inventory.songID %></td>
+        <td><%= song_inventory.id %></td>
         <td><%= song_inventory.title %></td>
         <td><%= song_inventory.cancon %></td>
         <td><%= song_inventory.instrumental %></td>
-        <td><%= song_inventory.artistID %></td>
-        <td><%= song_inventory.albumID %></td>
+        <td><%= song_inventory.band_id %></td>
+        <td><%= song_inventory.artist_id %></td>
+        <td><%= song_inventory.album_id %></td>
         <td><%= link_to 'Show', song_inventory, class: "content-link" %></td>
         <td><%= link_to 'Edit', edit_song_inventory_path(song_inventory), class: "content-link" %></td>
         <td><%= link_to 'Destroy', song_inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: "content-link"  %></td>

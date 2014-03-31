@@ -16,7 +16,7 @@
     <% @bands.each do |band| %>
       <tr>
         <td><%= band.name %></td>
-        <td><%= band.stateYear %></td>
+        <td><%= band.startYear %></td>
         <td><%= band.nationality %></td>
         <td><%= link_to 'Show', band %></td>
         <td><%= link_to 'Edit', edit_band_path(band) %></td>
