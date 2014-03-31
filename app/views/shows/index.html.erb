@@ -1,5 +1,9 @@
 <h1>Listing shows</h1>
-
+<% form_tag @show do |f| %>
+<div>
+<%= select_tag 'show_id', option_for_select(@shows.collect{|u| [u.showName, u.id]}) %>
+</div>
+<% end %>
 <table>
   <thead>
     <tr>

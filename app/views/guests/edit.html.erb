@@ -1,13 +1,6 @@
-
-<div id="container">
-
-
-<%= render 'layouts/header' %>
-
+<h1>Editing guest</h1>
 
 <%= render 'form' %>
 
-
-<%= render 'layouts/footer'%>
-
-</div>
+<%= link_to 'Show', @guest, class: "content-link" %> |
+<%= link_to 'Back', guests_path, class: "content-link" %>
