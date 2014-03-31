@@ -11,7 +11,6 @@ gem 'pg', '0.15.1'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sass', '3.2.13'
 gem 'protected_attributes', '1.0.5'
-gem 'thin'
 gem 'devise'
 gem 'sprockets', '2.11.0'
 gem 'slim', '2.0.0'
@@ -52,14 +51,14 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-<<<<<<< HEAD
+
 group :production do
   gem 'rails_12factor', '0.0.2'
 end 
-=======
+
 gem 'devise'
 
 gem 'foreigner'
 
 gem 'immigrant'
->>>>>>> FETCH_HEAD
+
