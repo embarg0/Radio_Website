@@ -3,4 +3,5 @@ class Host < ActiveRecord::Base
 
 	validates :firstName, :lastName, :stageName, :dateOfBirth, :rating, 
 				:contractStartDate, :salary, :presence => true;
+	belongs_to :host_shows
 end

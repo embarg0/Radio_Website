@@ -1,6 +1,8 @@
 RadioWebsite::Application.routes.draw do
 
 
+  resources :host_shows
+
   resources :time_slots
 
   resources :bands
