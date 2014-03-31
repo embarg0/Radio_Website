@@ -1,0 +1,63 @@
+<div id="container">
+
+    <%= render 'layouts/header' %>
+
+
+    <p id="home-p">Radio Los Santos (106.1) is a radio station in Los Santos, it plays West Coast hip hop from the late 1980s and early 1990s - primarily the "gangsta rap" sub-genre. The station, evidently, broadcasts from Los Santos.  The station also includes references to "carjacking on the rise", Los Santos gang violence, and the Los Santos drug/crack problem - being that these activities play a key element to its society. This is the favorite radio station of the Grove Street Families. The station DJ is Julio G. Rapper B-Real from Cypress Hill makes an appearance on the station regularly.</p>
+
+    <table class="infobox" cellspacing="5">
+	<tbody>
+		<tr>
+			<th colspan="2" class="check"><small>Radio Station</small><br>
+				<span class="fn">Radio Los Santos</span>
+			</th>
+		</tr>
+		<tr>
+			<td colspan="2" class="sn">
+				<%= image_tag "Radio-Los-Santos-V.png", size: "200x200" %>
+			</td>
+		</tr>
+		<tr class="">
+			<th scope="row" style="text-align:left; text-align:right;">Genre:</th>
+    		<td class="" style="">Modern rap/hip hop</td>
+		</tr>
+		<tr class="">
+			<th scope="row" style="text-align:left; text-align:right;">Appearance(S):</th>
+    		<td class="" style="">2Pac, Snoop Dogg and Dre</td>
+    	</tr>
+    	<tr class="">
+    		<th scope="row" style="text-align:left; text-align:right;">DJ:</th>
+    	<td class="" style="">Julio G</td>
+    	</tr>
+	</tbody>
+</table>
+
+    <h2>
+    	Current Playlist
+    </h2>
+
+    <ul>
+    	<li><%= link_to "2Pac","http://en.wikipedia.org/wiki/Tupac_Shakur" %>(feat. Pogo) - I Don't Give a Fuck(1991)</li>
+    	<li><%= link_to "Compton's Most Wanted","http://en.wikipedia.org/wiki/Compton%27s_Most_Wanted" %>Hood Took Me Under(1992)</li>
+    	<li><%= link_to "Dr.Dre","http://en.wikipedia.org/wiki/Dr.Dre" %>(feat. Snoop Dogg) - Nuthin' but a 'G' Thang(1992)</li>
+    	<li><%= link_to "Too Short","http://en.wikipedia.org/wiki/Too_$hort" %> - The Ghetto(1990)</li>
+    	<li><%= link_to "N.W.A","http://en.wikipedia.org/wiki/N.W.A" %> - Alwayz Into Somethin'(1991)</li>
+    	<li><%= link_to "Ice Cube","http://en.wikipedia.org/wiki/Ice_Cube" %>(feat. Das EFX) - Check Yo Self(1992)</li>
+    	<li><%= link_to "Kid Frost","http://en.wikipedia.org/wiki/Frost_(rapper)" %> - La Raza(1990)</li>
+    	<li><%= link_to "Cypress Hill","http://en.wikipedia.org/wiki/Cypress_Hill" %> - How I Just Killed a Man(1991)</li>
+    	<li>Dr. Dre(feat. Snoop Dogg & RBX) - Fuck Wit Dre Day(1992)</li>
+    	<li><%= link_to "The D.O.C","http://en.wikipedia.org/wiki/The_D.O.C." %> - It's Funky Enough(1989)</li>
+    	<li>N.W.A - Express Yourself(1988)</li>
+    	<li>Ice Cube - It Was a Good Day(1992)</li>
+    	<li><%= link_to "Eazy-E","http://en.wikipedia.org/wiki/Eazy-E" %>Eazy-er Said Than Dunn(1988)</li>
+    	<li><%= link_to "About The Law","http://en.wikipedia.org/wiki/Above_the_Law" %> - Murder Rap(1990)</li>
+    	<li>Dr.Dre(feat. Snoop Dogg) - Deep Cover(1992)</li>
+    	<li><%= link_to "Da Lench Mob","http://en.wikipedia.org/wiki/Da_Lench_Mob" %>(feat. Ice Cube) - Guerilla in tha Mist(1992)</li>
+    </ul>
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/RGfaVpJiaPU" frameborder="1" allowfullscreen></iframe>
+<iframe width="420" height="315" src="//www.youtube.com/embed/-uP1RnSA1Ps" frameborder="1" allowfullscreen></iframe>
+
+      <%= render 'layouts/footer'%>
+
+</div>

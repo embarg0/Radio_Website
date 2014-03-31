@@ -1,21 +1,22 @@
-RadioWebsite::Application.routes.draw do
+RadioStation::Application.routes.draw do
+  
+  root "static_pages#home"
+  
+  resources :hosts_shows
 
-
-  devise_for :users
   resources :guests
 
-  resources :song_inventories
+  resources :songs
 
-  resources :play_sheets
-
-  resources :hosts
-
-  resources :shows
-
-  root "pages#home"
-  get "pages/index"
-  get "/contact" => "pages#contact"
   
+  get "/home" => "static_pages#home"
+  get "/rls" => "static_pages#rls"
+  get "/news" => "static_pages#news"
+  get "/database" => "static_pages#database"
+  post "/database" => "static_pages#database"
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

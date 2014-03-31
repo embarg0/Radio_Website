@@ -1,0 +1,32 @@
+<div class="form" style="margin-left:10px;">
+
+<%= form_for(@hosts_show) do |f| %>
+  <% if @hosts_show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hosts_show.errors.count, "error") %> prohibited this hosts_show from being saved:</h2>
+
+      <ul>
+      <% @hosts_show.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :host_id %><br>
+    <%= f.number_field :host_id %>
+  </div>
+  <div class="field">
+    <%= f.label :show_id %><br>
+    <%= f.number_field :show_id %>
+  </div>
+  <div class="field">
+    <%= f.label :host_start_date %><br>
+    <%= f.date_select :host_start_date%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

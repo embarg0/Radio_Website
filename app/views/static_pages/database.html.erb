@@ -1,0 +1,319 @@
+
+<div id="container">
+
+    <%= render 'layouts/header' %>
+<div class="searcher" style="display:inline-block; margin:auto; padding-left:25%;">
+<%= form_tag database_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search], placeholder: "example: Category: (show name)" %>
+    <%= submit_tag "Search", :name => nil, class: "submit-button" %>
+  </p>
+<% end %>
+</div>
+<!-- <div id=class="add-on" style="float:right; display: inline-block; padding-right: 2%;">
+<%=select_tag "table", options_for_select(
+["","Song","Artist","Track","Band","Album","Playsheet","Host","HostsShow","Show","Timeslot","Guest"]),
+ :multiple => true, :size => 10 %>
+ <%= submit_tag "table", :name => nil, class: "submit-button" %>
+</div>
+
+-->
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Album Table</caption>
+  <thead>
+    <tr>
+      <th>Album</th>
+      <th>Genre</th>
+      <th>Label</th>
+      <th>Album Recording Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |albums| %>
+      <tr>
+        <td><%= albums.album_id %></td>
+        <td><%= albums.genre %></td>
+        <td><%= albums.label %></td>
+        <td><%= albums.album_recording_date.try(:strftime, "%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Song Table</caption>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Canadian Content</th>
+      <th>Instrumental</th>
+      <th>Album</th>
+      <th>Artist ID</th>
+      <th>Band</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.song_id %></td>
+        <td><%= song.title %></td>
+        <td><%= song.cancon %></td>
+        <td><%= song.instrumental %></td>
+        <td><%= song.album_id %></td>
+        <td><%= song.artist_id %></td>
+        <td><%= song.band_id %></td>
+       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Track Table</caption>
+    <tr>
+      <th>Track</th>
+      <th>Title</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Genre</th>
+      <th>Song ID #</th>
+      <th>Play Sheet ID #</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |tracks| %>
+      <tr>
+        <td><%= tracks.track_id %></td>
+        <td><%= tracks.title %></td>
+        <td><%= tracks.start_time.try(:strftime, "%M : %S") %></td>
+        <td><%= tracks.end_time.try(:strftime, "%M : %S") %></td>
+        <td><%= tracks.genre %></td>
+        <td><%= tracks.song_id %></td>
+        <td><%= tracks.playsheet_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Guest Table</caption>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Topic</th>
+      <th>Rating</th>
+      <th>Timeslot ID #</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guests.each do |guest| %>
+      <tr>
+        <td><%= guest.guest_id %></td>
+        <td><%= guest.first_name %>
+        <%= guest.last_name %></td>
+        <td><%= guest.description %></td>
+        <td><%= guest.topic %></td>
+        <td><%= guest.rating %></td>
+        <td><%= guest.timeslots_id %></td>
+       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Host Show Table</caption>
+    <tr>
+      <th>Contract Number</th>
+      <th>Host ID</th>
+      <th>Show Number</th>
+      <th>Host Start Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosts_shows.each do |hosts_show| %>
+      <tr>
+        <td><%= hosts_show.contract_number %></td>
+        <td><%= hosts_show.host_id %></td>
+        <td><%= hosts_show.show_id %></td>
+        <td><%= hosts_show.host_start_date.try(:strftime, "%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Artist Table</caption>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Stage Name</th>
+      <th>Nationality</th>
+      <th>Date of Birth</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artists.each do |artists| %>
+      <tr>
+        <td><%= artists.artist_id %></td>
+        <td><%= artists.first_name %></td>
+        <td><%= artists.last_name %></td>
+        <td><%= artists.stage_name %></td>
+        <td><%= artists.nationality %></td>
+        <td><%= artists.date_of_birth.try(:strftime, "%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Band Table</caption>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Year Started</th>
+      <th>Nationality</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bands.each do |bands| %>
+      <tr>
+        <td><%= bands.band_id %></td>
+        <td><%= bands.band_name %></td>
+        <td><%= bands.start_year %></td>
+        <td><%= bands.nationality %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Host Table</caption>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Stage Name</th>
+      <th>Date of Birth</th>
+      <th>Rating</th>
+      <th>Contract Start Date</th>
+      <th>Salary</th>
+      <th>Last Date Hosted</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosts.each do |hosts| %>
+      <tr>
+        <td><%= hosts.host_id %></td>
+        <td><%= hosts.first_name %></td>
+        <td><%= hosts.last_name %></td>
+        <td><%= hosts.stage_name %></td>
+        <td><%= hosts.date_of_birth.try(:strftime, "%B %d, %Y") %></td>
+        <td><%= hosts.rating %></td>
+        <td><%= hosts.contract_start_date.try(:strftime, "%B %d, %Y") %></td>
+        <td><%= hosts.salary %></td>
+        <td><%= hosts.date_last_hosted.try(:strftime, "%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Playsheet Table</caption>
+    <tr>
+      <th>#</th>
+      <th>Week Day</th>
+      <th>Play Sheet Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playsheets.each do |playsheets| %>
+      <tr>
+        <td><%= playsheets.playsheet_id %></td>
+        <td><%= playsheets.day_of_week %></td>
+        <td><%= playsheets.playsheet_date.try(:strftime, "%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Show Table</caption>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shows.each do |shows| %>
+      <tr>
+        <td><%= shows.show_id %></td>
+        <td><%= shows.show_name %></td>
+        <td><%= shows.description %></td>
+        <td><%= shows.category %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-hover" style=" margin-left: 2%; margin-right: 2%; width: 95%;">
+  <thead>
+  <caption style="font-style:bold; font-size:30px; margin-bottom:15px;">Timeslot Table</caption>
+    <tr>
+      <th>#</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Show Number</th>
+      <th>Play Sheet ID #</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timeslots.each do |timeslots| %>
+      <tr>
+        <td><%= timeslots.timeslots_id %></td>
+        <td><%= timeslots.start_time.try(:strftime, "%H:%M:%S") %></td>
+        <td><%= timeslots.end_time.try(:strftime, "%H:%M:%S") %></td>
+        <td><%= timeslots.show_id %></td>
+        <td><%= timeslots.playsheet_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+      <%= render 'layouts/footer'%>
+
+</div>
+
+
