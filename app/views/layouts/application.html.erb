@@ -24,8 +24,8 @@
 			<%= link_to "Radio Shows", shows_path, class: "nav-link" %>
 			<%= link_to "Hosts", hosts_path, class: "nav-link" %> 
 			<%= link_to "On Air Guests", guests_path, class: "nav-link" %> 
-			<%= link_to "Play Sheets", play_sheets_path, class: "nav-link" %> 
-			<%= link_to "Song Inventory", song_inventories_path, class: "nav-link" %> 
+			<%= link_to "Play Sheets", playsheets_path, class: "nav-link" %> 
+			<%= link_to "Song Inventory", songs_path, class: "nav-link" %> 
 			<%= link_to "Contact", contact_path, class: "nav-link" %> 
 			<% unless user_signed_in? %> <!--unless is equal to if not-->
 				<%= link_to "Admin Sign In", new_user_session_path, class: "nav-link" %>
@@ -57,15 +57,6 @@
 		</div>
 	</div>
 
-		<footer id="footer">
-			<div class = "footer-container">
-			Contact Us <br>
-			Address:<br>
-			Phone:<br>
-			Email:<br>
-			</div>
-
-		</footer>
 
 
 </body>

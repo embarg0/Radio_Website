@@ -18,7 +18,7 @@ class HostsControllerTest < ActionController::TestCase
 
   test "should create host" do
     assert_difference('Host.count') do
-      post :create, host: { contractStartDate: @host.contractStartDate, dateOfBirth: @host.dateOfBirth, employeeNum: @host.employeeNum, firstName: @host.firstName, lastName: @host.lastName, rating: @host.rating, salary: @host.salary, stageName: @host.stageName }
+      post :create, host: { contract_end_date: @host.contract_end_date, contract_start_date: @host.contract_start_date, date_of_birth: @host.date_of_birth, first_name: @host.first_name, last_name: @host.last_name, rating: @host.rating, salary: @host.salary, stage_name: @host.stage_name }
     end
 
     assert_redirected_to host_path(assigns(:host))
@@ -35,7 +35,7 @@ class HostsControllerTest < ActionController::TestCase
   end
 
   test "should update host" do
-    patch :update, id: @host, host: { contractStartDate: @host.contractStartDate, dateOfBirth: @host.dateOfBirth, employeeNum: @host.employeeNum, firstName: @host.firstName, lastName: @host.lastName, rating: @host.rating, salary: @host.salary, stageName: @host.stageName }
+    patch :update, id: @host, host: { contract_end_date: @host.contract_end_date, contract_start_date: @host.contract_start_date, date_of_birth: @host.date_of_birth, first_name: @host.first_name, last_name: @host.last_name, rating: @host.rating, salary: @host.salary, stage_name: @host.stage_name }
     assert_redirected_to host_path(assigns(:host))
   end
 

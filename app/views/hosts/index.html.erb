@@ -3,13 +3,13 @@
 <table>
   <thead>
     <tr>
-      <th>Employeenum</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Stagename</th>
-      <th>Dateofbirth</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Stage name</th>
+      <th>Date of birth</th>
       <th>Rating</th>
-      <th>Contractstartdate</th>
+      <th>Contract start date</th>
+      <th>Contract end date</th>
       <th>Salary</th>
       <th></th>
       <th></th>
@@ -20,17 +20,22 @@
   <tbody>
     <% @hosts.each do |host| %>
       <tr>
-        <td><%= host.id %></td>
-        <td><%= host.firstName %></td>
-        <td><%= host.lastName %></td>
-        <td><%= host.stageName %></td>
-        <td><%= host.dateOfBirth %></td>
+        <td><%= host.first_name %></td>
+        <td><%= host.last_name %></td>
+        <td><%= host.stage_name %></td>
+        <td><%= host.date_of_birth %></td>
         <td><%= host.rating %></td>
-        <td><%= host.contractStartDate %></td>
+        <td><%= host.contract_start_date %></td>
+        <td><%= host.contract_end_date %></td>
         <td><%= host.salary %></td>
-        <td><%= link_to 'Show', host, class: "content-link" %></td>
-        <td><%= link_to 'Edit', edit_host_path(host), class: "content-link" %></td>
-        <td><%= link_to 'Destroy', host, method: :delete, data: { confirm: 'Are you sure?' } , class: "content-link"%></td>
+        <td><%= link_to 'Show', host %></td>
+
+        <% if admin? %>
+          <td><%= link_to 'Edit', edit_host_path(host) %></td>
+          <td><%= link_to 'Destroy', host, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
+
       </tr>
     <% end %>
   </tbody>
@@ -38,50 +43,6 @@
 
 <br>
 
-<%= link_to 'New Host', new_host_path, class: "content-link" %><br>
-<h1> Higher salary than Johns (4m): </h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>FirstName</th>
-      <th>Lastname</th>
-      <th>Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @hosts[0].query4m().each do |host| %>
-      <tr>
-        <td><%= host['firstName'] %></td>
-        <td><%= host['lastName'] %></td>
-        <td><%= host['salary'] %></td>
-         </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<br><br>
-
-<h1> Most diverse hosts (4n): </h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>FirstName</th>
-      <th>Lastname</th>
-      <th>Shows</th>
-      <th>TimeSlots</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @hosts[0].query4n().each do |host| %>
-      <tr>
-        <td><%= host['firstName'] %></td>
-        <td><%= host['lastName'] %></td>
-        <td><%= host['showName'] %></td>
-        <td><%= host['timeSlot'] %></td>
-         </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if admin? %>
+  <%= link_to 'New Host', new_host_path %>
+<% end %>

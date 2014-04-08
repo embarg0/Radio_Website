@@ -3,11 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Stagename</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Stage name</th>
       <th>Nationality</th>
-      <th>Date</th>
+      <th>Band name</th>
+      <th>Date of birth</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,11 +18,12 @@
   <tbody>
     <% @artists.each do |artist| %>
       <tr>
-        <td><%= artist.firstName %></td>
-        <td><%= artist.lastName %></td>
-        <td><%= artist.stageName %></td>
+        <td><%= artist.first_name %></td>
+        <td><%= artist.last_name %></td>
+        <td><%= artist.stage_name %></td>
         <td><%= artist.nationality %></td>
-        <td><%= artist.date %></td>
+        <td><%= artist.band_name %></td>
+        <td><%= artist.date_of_birth %></td>
         <td><%= link_to 'Show', artist %></td>
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>

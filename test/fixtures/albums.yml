@@ -3,9 +3,9 @@
 one:
   type: 
   label: MyString
-  albumRecordingDate: 2014-03-30
+  album_recording_date: 2014-04-01
 
 two:
   type: 
   label: MyString
-  albumRecordingDate: 2014-03-30
+  album_recording_date: 2014-04-01

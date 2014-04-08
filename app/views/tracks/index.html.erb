@@ -4,10 +4,9 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Starttime</th>
-      <th>Endtime</th>
+      <th>Start time</th>
+      <th>End time</th>
       <th>Type</th>
-      <th>Songid</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,10 +17,9 @@
     <% @tracks.each do |track| %>
       <tr>
         <td><%= track.title %></td>
-        <td><%= track.startTime %></td>
-        <td><%= track.endTime %></td>
+        <td><%= track.start_time %></td>
+        <td><%= track.end_time %></td>
         <td><%= track.type %></td>
-        <td><%= track.songID %></td>
         <td><%= link_to 'Show', track %></td>
         <td><%= link_to 'Edit', edit_track_path(track) %></td>
         <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>

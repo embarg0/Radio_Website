@@ -11,34 +11,37 @@
     </div>
   <% end %>
 
-
   <div class="field">
-    <%= f.label :firstName %><br>
-    <%= f.text_field :firstName %>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :lastName %><br>
-    <%= f.text_field :lastName %>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :stageName %><br>
-    <%= f.text_field :stageName %>
+    <%= f.label :stage_name %><br>
+    <%= f.text_field :stage_name %>
   </div>
   <div class="field">
-    <%= f.label :dateOfBirth %><br>
-    <%= f.date_select :dateOfBirth %>
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_select :date_of_birth %>
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating, as: :integer, min: 0, max:10%>
+    <%= f.number_field :rating %>
   </div>
   <div class="field">
-    <%= f.label :contractStartDate %><br>
-    <%= f.date_select :contractStartDate %>
+    <%= f.label :contract_start_date %><br>
+    <%= f.date_select :contract_start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_end_date %><br>
+    <%= f.date_select :contract_end_date %>
   </div>
   <div class="field">
     <%= f.label :salary %><br>
-    <%= f.number_field :salary, as: :integer, min: 0%>
+    <%= f.number_field :salary %>
   </div>
   <div class="actions">
     <%= f.submit %>

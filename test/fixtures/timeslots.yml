@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2014-04-01 16:43:32
+  end_time: 2014-04-01 16:43:32
+  show_number: 1
+
+two:
+  start_time: 2014-04-01 16:43:32
+  end_time: 2014-04-01 16:43:32
+  show_number: 1

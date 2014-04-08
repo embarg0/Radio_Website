@@ -1,34 +1,30 @@
 RadioWebsite::Application.routes.draw do
-
-
-  resources :host_shows
-
-  resources :time_slots
-
-  resources :bands
-
-  resources :artists
-
-  resources :albums
-
-  resources :tracks
+  
 
   devise_for :users
-  resources :guests
-
-  resources :song_inventories
-
-  resources :play_sheets
-
-  resources :hosts
+  resources :artists
 
   resources :shows
 
+  get "pages/home"
+  get "pages/contact"
+  resources :tracks
+
+  resources :songs
+
+  resources :albums
+
+  resources :guests
+
+  resources :timeslots
+
+  resources :playsheets
+
+  resources :hosts
+
   root "pages#home"
-  get "pages/index"
+  #get "pages/index"
   get "/contact" => "pages#contact"
-  post "/shows" => "shows#index"
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

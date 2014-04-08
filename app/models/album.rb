@@ -1,3 +1,4 @@
 class Album < ActiveRecord::Base
-	has_many :song_inventories
+    validates :type, :label, :album_recording_date, :presence => true;
+	has_many :songs
 end

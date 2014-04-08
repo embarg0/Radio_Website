@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331002249) do
+ActiveRecord::Schema.define(version: 20140407064409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,69 +19,56 @@ ActiveRecord::Schema.define(version: 20140331002249) do
   create_table "albums", force: true do |t|
     t.string   "type"
     t.string   "label"
-    t.date     "albumRecordingDate"
+    t.date     "album_recording_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "artists", force: true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "stageName"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "stage_name"
     t.string   "nationality"
-    t.date     "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bands", force: true do |t|
-    t.string   "name"
-    t.integer  "startYear"
-    t.string   "nationality"
+    t.string   "band_name"
+    t.date     "date_of_birth"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "guests", force: true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
+    t.string   "first_name"
+    t.string   "last_name"
     t.text     "description"
     t.text     "topic"
     t.integer  "rating"
-    t.integer  "time_slot_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "host_shows", force: true do |t|
-    t.date     "hostStartYear"
-    t.date     "hostStartMonth"
+    t.integer  "timeslot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "hosts", force: true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "stageName"
-    t.date     "dateOfBirth"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "stage_name"
+    t.date     "date_of_birth"
     t.integer  "rating"
-    t.date     "contractStartDate"
-    t.string   "salary"
+    t.date     "contract_start_date"
+    t.date     "contract_end_date"
+    t.integer  "salary"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "hosts_shows", force: true do |t|
-    t.date     "hostStartYear"
-    t.date     "hostStartMonth"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "hosts_shows", id: false, force: true do |t|
+    t.integer "host_id",          null: false
+    t.integer "show_id",          null: false
+    t.integer "host_start_year"
+    t.string  "host_start_month"
   end
 
-  create_table "play_sheets", force: true do |t|
+  create_table "playsheets", force: true do |t|
     t.date     "date"
-    t.date     "dayofweek"
+    t.string   "day_of_week"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -98,40 +85,40 @@ ActiveRecord::Schema.define(version: 20140331002249) do
   end
 
   create_table "shows", force: true do |t|
-    t.string   "showName"
-    t.string   "category"
+    t.string   "show_name"
     t.text     "description"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "song_inventories", force: true do |t|
+  create_table "songs", force: true do |t|
     t.string   "title"
-    t.integer  "cancon"
-    t.string   "instrumental"
+    t.boolean  "cancon"
+    t.boolean  "instrumental"
     t.integer  "album_id"
     t.integer  "artist_id"
-    t.integer  "band_id"
-    t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "time_slots", force: true do |t|
-    t.time     "startTime"
-    t.time     "endTime"
+  create_table "timeslots", force: true do |t|
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "show_number"
     t.integer  "show_id"
-    t.integer  "play_sheet_id"
+    t.integer  "playsheet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tracks", force: true do |t|
     t.string   "title"
-    t.time     "startTime"
-    t.time     "endTime"
+    t.time     "start_time"
+    t.time     "end_time"
     t.string   "type"
-    t.integer  "play_sheet_id"
+    t.integer  "playsheet_id"
+    t.integer  "song_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

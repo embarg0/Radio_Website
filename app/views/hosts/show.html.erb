@@ -1,28 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Employeenum:</strong>
-  <%= @host.employeeNum %>
+  <strong>First name:</strong>
+  <%= @host.first_name %>
 </p>
 
 <p>
-  <strong>Firstname:</strong>
-  <%= @host.firstName %>
+  <strong>Last name:</strong>
+  <%= @host.last_name %>
 </p>
 
 <p>
-  <strong>Lastname:</strong>
-  <%= @host.lastName %>
+  <strong>Stage name:</strong>
+  <%= @host.stage_name %>
 </p>
 
 <p>
-  <strong>Stagename:</strong>
-  <%= @host.stageName %>
-</p>
-
-<p>
-  <strong>Dateofbirth:</strong>
-  <%= @host.dateOfBirth %>
+  <strong>Date of birth:</strong>
+  <%= @host.date_of_birth %>
 </p>
 
 <p>
@@ -31,8 +26,13 @@
 </p>
 
 <p>
-  <strong>Contractstartdate:</strong>
-  <%= @host.contractStartDate %>
+  <strong>Contract start date:</strong>
+  <%= @host.contract_start_date %>
+</p>
+
+<p>
+  <strong>Contract end date:</strong>
+  <%= @host.contract_end_date %>
 </p>
 
 <p>
@@ -40,5 +40,8 @@
   <%= @host.salary %>
 </p>
 
-<%= link_to 'Edit', edit_host_path(@host), class: "content-link" %> |
-<%= link_to 'Back', hosts_path, class: "content-link" %>
+<% if admin? %>
+<%= link_to 'Edit', edit_host_path(@host) %> |
+<% end %>
+
+<%= link_to 'Back', hosts_path %>

@@ -1,19 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  guestNum: 1
-  firstName: MyString
-  lastName: MyString
+  first_name: MyString
+  last_name: MyString
   description: MyText
   topic: MyText
   rating: 1
-  timeslotNum: 1
 
 two:
-  guestNum: 1
-  firstName: MyString
-  lastName: MyString
+  first_name: MyString
+  last_name: MyString
   description: MyText
   topic: MyText
   rating: 1
-  timeslotNum: 1

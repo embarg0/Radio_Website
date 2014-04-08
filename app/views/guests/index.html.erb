@@ -3,9 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Guestnum</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
+      <th>First name</th>
+      <th>Last name</th>
       <th>Description</th>
       <th>Topic</th>
       <th>Rating</th>
@@ -18,15 +17,18 @@
   <tbody>
     <% @guests.each do |guest| %>
       <tr>
-        <td><%= guest.id %></td>
-        <td><%= guest.firstName %></td>
-        <td><%= guest.lastName %></td>
+        <td><%= guest.first_name %></td>
+        <td><%= guest.last_name %></td>
         <td><%= guest.description %></td>
         <td><%= guest.topic %></td>
         <td><%= guest.rating %></td>
-        <td><%= link_to 'Show', guest, class: "content-link" %></td>
-        <td><%= link_to 'Edit', edit_guest_path(guest), class: "content-link" %></td>
-        <td><%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' }, class: "content-link" %></td>
+        <td><%= link_to 'Show', guest %></td>
+
+        <% if admin? %>
+          <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
+          <td><%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New Guest', new_guest_path, class: "content-link" %>
+<% if admin? %>
+  <%= link_to 'New Guest', new_guest_path %>
+<% end %>

@@ -2,14 +2,12 @@
 
 one:
   title: MyString
-  startTime: 2014-03-30 10:21:16
-  endTime: 2014-03-30 10:21:16
+  start_time: 2014-04-01 16:48:52
+  end_time: 2014-04-01 16:48:52
   type: 
-  songID: 1
 
 two:
   title: MyString
-  startTime: 2014-03-30 10:21:16
-  endTime: 2014-03-30 10:21:16
+  start_time: 2014-04-01 16:48:52
+  end_time: 2014-04-01 16:48:52
   type: 
-  songID: 1

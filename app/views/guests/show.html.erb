@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Guestnum:</strong>
-  <%= @guest.guestNum %>
+  <strong>First name:</strong>
+  <%= @guest.first_name %>
 </p>
 
 <p>
-  <strong>Firstname:</strong>
-  <%= @guest.firstName %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @guest.lastName %>
+  <strong>Last name:</strong>
+  <%= @guest.last_name %>
 </p>
 
 <p>
@@ -30,10 +25,8 @@
   <%= @guest.rating %>
 </p>
 
-<p>
-  <strong>Timeslotnum:</strong>
-  <%= @guest.timeSlotNum %>
-</p>
+<% if admin? %>
+<%= link_to 'Edit', edit_guest_path(@guest) %> |
+<% end %>
 
-<%= link_to 'Edit', edit_guest_path(@guest), class: "content-link" %> |
-<%= link_to 'Back', guests_path, class: "content-link" %>
+<%= link_to 'Back', guests_path %>

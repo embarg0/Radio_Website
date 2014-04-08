@@ -1,18 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
-  <%= @show.showNum %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @show.showName %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @show.category %>
+  <strong>Show name:</strong>
+  <%= @show.show_name %>
 </p>
 
 <p>
@@ -20,5 +10,13 @@
   <%= @show.description %>
 </p>
 
-<%= link_to 'Edit', edit_show_path(@show), class: "content-link" %> |
-<%= link_to 'Back', shows_path, class: "content-link" %>
+<p>
+  <strong>Category:</strong>
+  <%= @show.category %>
+</p>
+
+<% if admin? %>
+<%= link_to 'Edit', edit_show_path(@show) %> |
+<% end %>
+
+<%= link_to 'Back', shows_path %>

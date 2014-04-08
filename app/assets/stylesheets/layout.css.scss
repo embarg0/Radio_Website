@@ -2,7 +2,7 @@
 body {
 	width:auto;
 	margin: 0; /*default rails padding around boarder*/
-	height:996px;
+	height:3000px;
 	position: relative;
 }
 
@@ -44,7 +44,7 @@ body {
 	color:white;
 
 	&:hover {
-		background:#ccc;
+		background:#fff;
 		color:black;
 	}
 
@@ -55,7 +55,7 @@ body {
 /* Content Styling */
 .content {
 	width: 100%;
-	height: 2000px;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5px;
@@ -65,8 +65,6 @@ body {
 	background: #3B3835;
 	color:white;
 	background-image: url('7.jpg');
-	background-size: cover;
-	background-repeat:no-repeat;
 	h1 {
 		margin-top: 0;
 		color:white;
@@ -96,13 +94,15 @@ body {
 }
 
 .content-container{
-	height:5000px;
 	height:auto;
-	width:65%;
+	min-height:100px;
+	width:auto;
+	min-width:300px;
 	/*//margin:100 auto 100 auto; // specify all four arguments at once*/
 	margin: 20% 20% ; /*specify top and bottom and then right and left - allows to center the container*/
 	background: #3B3835;
 	position:absolute;
+	padding:50px;
 }
 
 /* Footer Styling */

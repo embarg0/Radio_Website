@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Firstname:</strong>
-  <%= @artist.firstName %>
+  <strong>First name:</strong>
+  <%= @artist.first_name %>
 </p>
 
 <p>
-  <strong>Lastname:</strong>
-  <%= @artist.lastName %>
+  <strong>Last name:</strong>
+  <%= @artist.last_name %>
 </p>
 
 <p>
-  <strong>Stagename:</strong>
-  <%= @artist.stageName %>
+  <strong>Stage name:</strong>
+  <%= @artist.stage_name %>
 </p>
 
 <p>
@@ -21,8 +21,13 @@
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @artist.date %>
+  <strong>Band name:</strong>
+  <%= @artist.band_name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @artist.date_of_birth %>
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |

@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use postgres as the database for Active Record
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -27,13 +26,12 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# Bootstrap
-gem 'bootstrap-sass', '2.3.2.0'
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -46,11 +44,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gem 'sequel'
-
-gem 'devise'
-
-gem 'foreigner'
-
-gem 'immigrant'

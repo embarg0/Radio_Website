@@ -18,7 +18,7 @@ class ArtistsControllerTest < ActionController::TestCase
 
   test "should create artist" do
     assert_difference('Artist.count') do
-      post :create, artist: { date: @artist.date, firstName: @artist.firstName, lastName: @artist.lastName, nationality: @artist.nationality, stageName: @artist.stageName }
+      post :create, artist: { band_name: @artist.band_name, date_of_birth: @artist.date_of_birth, first_name: @artist.first_name, last_name: @artist.last_name, nationality: @artist.nationality, stage_name: @artist.stage_name }
     end
 
     assert_redirected_to artist_path(assigns(:artist))
@@ -35,7 +35,7 @@ class ArtistsControllerTest < ActionController::TestCase
   end
 
   test "should update artist" do
-    patch :update, id: @artist, artist: { date: @artist.date, firstName: @artist.firstName, lastName: @artist.lastName, nationality: @artist.nationality, stageName: @artist.stageName }
+    patch :update, id: @artist, artist: { band_name: @artist.band_name, date_of_birth: @artist.date_of_birth, first_name: @artist.first_name, last_name: @artist.last_name, nationality: @artist.nationality, stage_name: @artist.stage_name }
     assert_redirected_to artist_path(assigns(:artist))
   end
 

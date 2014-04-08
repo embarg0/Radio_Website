@@ -1,3 +1,4 @@
 class Track < ActiveRecord::Base
-	has_one :song
+	validates :title, :start_time, :end_time, :type, :presence => true;
+
 end

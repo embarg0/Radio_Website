@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstName %><br>
-    <%= f.text_field :firstName %>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :lastName %><br>
-    <%= f.text_field :lastName %>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -29,9 +29,8 @@
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating, as: :integer, min: 0, max:10 %>
+    <%= f.number_field :rating %>
   </div>
- 
   <div class="actions">
     <%= f.submit %>
   </div>
